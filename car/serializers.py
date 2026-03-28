@@ -5,8 +5,8 @@ from car.models import Car
 
 class CarSerializer(serializers.Serializer):
     id = serializers.IntegerField(read_only=True)
-    model = serializers.CharField(required=True, max_length=64)
     manufacturer = serializers.CharField(required=True, max_length=64)
+    model = serializers.CharField(required=True, max_length=64)
     horse_powers = serializers.IntegerField(
         required=True,
         validators=[MinValueValidator(1), MaxValueValidator(1914)]
